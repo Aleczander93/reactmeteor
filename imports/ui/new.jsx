@@ -23,7 +23,6 @@ export default class New extends PureComponent {
 
     console.log('Success player submitted!')
 
-    this.Router.history('/');
   }
 
   render() {
@@ -136,9 +135,11 @@ export default class New extends PureComponent {
             </div>
 
             <div className="input-field col s6">
-              <button className="btn waves-effect waves-light" type='submit' name='action'>
-                Submit <i className="material-icons right">send</i>
-              </button>
+              {/* <Link to='/'> */}
+                <button className="btn waves-effect waves-light" type='submit' name='action'>
+                  Submit <i className="material-icons right">send</i>
+                </button>
+              {/* </Link> */}
             </div>
           </div>
 
