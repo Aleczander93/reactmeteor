@@ -30,78 +30,79 @@ export default class Player extends Component {
         </CardMedia>
 
         <CardText>
+          <div style={styles.wrapper}>
+            <Chip
+              backgroundColor={blue200}
+              style={styles.chip}
+              >
+              <Avatar size={32} color={blue200} backgroundColor={blue900}>
+                4
+              </Avatar>
+              Ball manipulation
+            </Chip>
 
-          <Chip
-            backgroundColor={blue200}
-            style={styles.chip}
-            >
-            <Avatar size={32} color={blue200} backgroundColor={blue900}>
-              3
-            </Avatar>
-            Ball manipulation
-          </Chip>
+            <Chip
+              backgroundColor={blue200}
+              style={styles.chip}
+              >
+              <Avatar size={32} color={blue200} backgroundColor={blue900}>
+                5
+              </Avatar>
+              Kicking abilities
+            </Chip>
 
-          <Chip
-            backgroundColor={blue200}
-            style={styles.chip}
-            >
-            <Avatar size={32} color={blue200} backgroundColor={blue900}>
-              5
-            </Avatar>
-            Kicking abilities
-          </Chip>
+            <Chip
+              backgroundColor={blue200}
+              style={styles.chip}
+              >
+              <Avatar size={32} color={blue200} backgroundColor={blue900}>
+                5
+              </Avatar>
+              Duel/Tackling abilities
+            </Chip>
 
-          <Chip
-            backgroundColor={blue200}
-            style={styles.chip}
-            >
-            <Avatar size={32} color={blue200} backgroundColor={blue900}>
-              2
-            </Avatar>
-            Duel/Tackling abilities
-          </Chip>
+            <Chip
+              backgroundColor={blue200}
+              style={styles.chip}
+              >
+              <Avatar size={32} color={blue200} backgroundColor={blue900}>
+                5
+              </Avatar>
+              Field speed coverage
+            </Chip>
 
-          <Chip
-            backgroundColor={blue200}
-            style={styles.chip}
-            >
-            <Avatar size={32} color={blue200} backgroundColor={blue900}>
-              2
-            </Avatar>
-            Field speed coverage
-          </Chip>
+            <Chip
+              backgroundColor={blue200}
+              style={styles.chip}
+              >
+              <Avatar size={32} color={blue200} backgroundColor={blue900}>
+                7
+              </Avatar>
+              Blocking abilities
+            </Chip>
 
-          <Chip
-            backgroundColor={blue200}
-            style={styles.chip}
-            >
-            <Avatar size={32} color={blue200} backgroundColor={blue900}>
-              2
-            </Avatar>
-            Blocking abilities
-          </Chip>
+            <Chip
+              backgroundColor={blue200}
+              style={styles.chip}
+              >
+              <Avatar size={32} color={blue200} backgroundColor={blue900}>
+                9
+              </Avatar>
+              Game strategy
+            </Chip>
 
-          <Chip
-            backgroundColor={blue200}
-            style={styles.chip}
-            >
-            <Avatar size={32} color={blue200} backgroundColor={blue900}>
-              2
-            </Avatar>
-            Game strategy
-          </Chip>
-
-          <Chip
-            backgroundColor={blue200}
-            style={styles.chip}
-            >
-            <Avatar size={32} color={blue200} backgroundColor={blue900}>
-              2
-            </Avatar>
-            Playmaking risk
-          </Chip>
-
+            <Chip
+              backgroundColor={blue200}
+              style={styles.chip}
+              >
+              <Avatar size={32} color={blue200} backgroundColor={blue900}>
+                4
+              </Avatar>
+              Playmaking risk
+            </Chip>
+          </div>
         </CardText>
+
         <CardActions>
 
         </CardActions>
