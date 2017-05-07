@@ -1,10 +1,111 @@
 import React, { Component } from 'react';
+import { Card, CardMedia, CardTitle, CardText, CardActions} from 'material-ui/Card';
+import RaisedButton from 'material-ui/RaisedButton';
+import Avatar from 'material-ui/Avatar';
+import Chip from 'material-ui/Chip';
+import { blue200, blue900 } from 'material-ui/styles/colors';
+
+const styles = {
+  chip: {
+    margin: 4,
+  },
+  wrapper: {
+    display: 'flex',
+    flexWrap: 'wrap',
+  },
+  button: {
+    margin: 12,
+  },
+};
 
 
 export default class Player extends Component {
   render() {
     return (
-      <h1> Player </h1>
+      <Card>
+        <CardMedia
+          overlay={<CardTitle title="Aleczander Figueroa" subtitle="Offense: 11 - Defense: 10" />}
+        >
+          <img src="player.jpg" />
+        </CardMedia>
+
+        <CardText>
+
+          <Chip
+            backgroundColor={blue200}
+            style={styles.chip}
+            >
+            <Avatar size={32} color={blue200} backgroundColor={blue900}>
+              3
+            </Avatar>
+            Ball manipulation
+          </Chip>
+
+          <Chip
+            backgroundColor={blue200}
+            style={styles.chip}
+            >
+            <Avatar size={32} color={blue200} backgroundColor={blue900}>
+              5
+            </Avatar>
+            Kicking abilities
+          </Chip>
+
+          <Chip
+            backgroundColor={blue200}
+            style={styles.chip}
+            >
+            <Avatar size={32} color={blue200} backgroundColor={blue900}>
+              2
+            </Avatar>
+            Duel/Tackling abilities
+          </Chip>
+
+          <Chip
+            backgroundColor={blue200}
+            style={styles.chip}
+            >
+            <Avatar size={32} color={blue200} backgroundColor={blue900}>
+              2
+            </Avatar>
+            Field speed coverage
+          </Chip>
+
+          <Chip
+            backgroundColor={blue200}
+            style={styles.chip}
+            >
+            <Avatar size={32} color={blue200} backgroundColor={blue900}>
+              2
+            </Avatar>
+            Blocking abilities
+          </Chip>
+
+          <Chip
+            backgroundColor={blue200}
+            style={styles.chip}
+            >
+            <Avatar size={32} color={blue200} backgroundColor={blue900}>
+              2
+            </Avatar>
+            Game strategy
+          </Chip>
+
+          <Chip
+            backgroundColor={blue200}
+            style={styles.chip}
+            >
+            <Avatar size={32} color={blue200} backgroundColor={blue900}>
+              2
+            </Avatar>
+            Playmaking risk
+          </Chip>
+
+        </CardText>
+        <CardActions>
+
+        </CardActions>
+      </Card>
     )
   }
 }
