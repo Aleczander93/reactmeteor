@@ -1,66 +1,31 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
+import PropTypes from 'prop-types';
+import createReactClass from 'create-react-class';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import RaisedButton from 'material-ui/RaisedButton';
 import AppBar from 'material-ui/AppBar';
 import { List } from 'material-ui/List';
 import Divider from 'material-ui/Divider';
+import { createContainer } from 'meteor/react-meteor-data';
+import { Link } from 'react-router-dom';
+
+// database - collection
+import { Players } from '../api/player'
 
 import TeamList from './team-list.jsx';
 import TeamStats from './team-stats.jsx';
 import Player from './player';
 
-export default class App extends Component {
-
+export class App extends PureComponent {
 constructor(props) {
   super(props);
   this.state = { players: [] };
 }
 
-componentWillMount() {
-  this.setState({ players: [
-    {
-      _id:1,
-      name: "Aaron Schwartz",
-      ballManipulation: 2,
-      kickingAbilities: 5,
-      passingAbilities: 6,
-      duelTackling: 3,
-      fieldCoverage: 7,
-      blockingAbiliteies: 5,
-      gameStrategy: 4,
-      playmakingRisks: 1,
-    },
-    {
-      _id:2,
-      name: "Thomas Echezabal",
-      ballManipulation: 2,
-      kickingAbilities: 5,
-      passingAbilities: 6,
-      duelTackling: 3,
-      fieldCoverage: 7,
-      blockingAbiliteies: 5,
-      gameStrategy: 4,
-      playmakingRisks: 1,
-    },
-    {
-      _id:3,
-      name: "Shandy Sulen",
-      ballManipulation: 2,
-      kickingAbilities: 5,
-      passingAbilities: 6,
-      duelTackling: 3,
-      fieldCoverage: 7,
-      blockingAbiliteies: 5,
-      gameStrategy: 4,
-      playmakingRisks: 1,
-    }
-  ]});
-}
-
   renderPlayers() {
-    return this.state.players.map((player) => (
+    return this.props.players.map((player) => (
       <TeamList key={player._id} player={player} />
-    ))
+    ));
   }
 
   render() {
@@ -74,7 +39,7 @@ componentWillMount() {
           <div className="row">
             <div className="col s12 m7"><Player /></div>
             <div className="col s12 m5">
-              <h1>Team List</h1>
+              <h1>Team List</h1><Link to='/new' className="waves-effect waves-light btn">Add player</Link>
               <Divider/>
                 <List>
                   {this.renderPlayers()}
@@ -88,3 +53,14 @@ componentWillMount() {
     )
   }
 }
+
+App.propTypes = {
+  players: PropTypes.array.isRequired,
+};
+
+export default createContainer(() => {
+  Meteor.subscribe('players');
+  return {
+    players: Players.find({}, {sort: { name: 1 }}).fetch(),
+  };
+}, App);
