@@ -15,7 +15,7 @@ import { Players } from '../api/player'
 import TeamList from './team-list.jsx';
 import TeamStats from './team-stats.jsx';
 import Player from './player';
-import AccountsWrapper from './AccountsWrapper';
+import AccountsWrapper from './AccountsWrapper.jsx';
 
 export class App extends PureComponent {
 constructor(props) {
