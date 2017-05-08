@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import createReactClass from 'create-react-class';
+// import createReactClass from 'create-react-class';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import RaisedButton from 'material-ui/RaisedButton';
 import AppBar from 'material-ui/AppBar';
@@ -15,6 +15,7 @@ import { Players } from '../api/player'
 import TeamList from './team-list.jsx';
 import TeamStats from './team-stats.jsx';
 import Player from './player';
+import AccountsWrapper from './AccountsWrapper';
 
 export class App extends PureComponent {
 constructor(props) {
@@ -32,10 +33,14 @@ constructor(props) {
     return (
       <MuiThemeProvider>
         <div className="container">
+
           <AppBar
-          title="Soccer Application"
-          iconClassNameRight="muidocs-icon-navigation-expand-more"
-          showMenuIconButton={false}/>
+            title="Soccer Application"
+            iconClassNameRight="muidocs-icon-navigation-expand-more"
+            showMenuIconButton={false}>
+              <AccountsWrapper />
+          </AppBar>
+
           <div className="row">
             <div className="col s12 m7"><Player /></div>
             <div className="col s12 m5">

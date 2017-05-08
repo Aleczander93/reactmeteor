@@ -23,6 +23,8 @@ export default class New extends PureComponent {
 
     console.log('Success player submitted!')
 
+    this.Route.push('/');
+
   }
 
   render() {
