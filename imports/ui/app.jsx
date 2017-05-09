@@ -38,7 +38,7 @@ constructor(props) {
             title="Soccer Application"
             iconClassNameRight="muidocs-icon-navigation-expand-more"
             showMenuIconButton={false}>
-              <AccountsWrapper />
+              <AccountsWrapper></AccountsWrapper>
           </AppBar>
 
           <div className="row">
@@ -65,6 +65,9 @@ App.propTypes = {
 
 export default createContainer(() => {
   Meteor.subscribe('players');
+
+  // const user = Meteor.userId()
+
   return {
     players: Players.find({}, {sort: { name: 1 }}).fetch(),
   };

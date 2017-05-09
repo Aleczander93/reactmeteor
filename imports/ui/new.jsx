@@ -6,7 +6,7 @@ export default class New extends PureComponent {
   submitPlayer(event) {
     event.preventDefault();
 
-    Players.insert({
+    let player = {
       name: this.refs.name.value,
       team: this.refs.team.value,
       ballManipulation: this.refs.ballManipulation.value,
@@ -19,12 +19,17 @@ export default class New extends PureComponent {
       playmakingRisks: this.refs.playmakingRisks.value,
       notes: this.refs.notes.value,
       createdAt: new Date(),
+      // owner: Meteor.userId(),
+    }
+
+    Meteor.call('insertPlayer', player, (error) =>{
+      if(error) {
+        alert('Oops something went wrong:' + error.reason);
+      } else {
+        alert('Player added');
+        this.Route.push('/');
+      }
     });
-
-    console.log('Success player submitted!')
-
-    this.Route.push('/');
-
   }
 
   render() {
@@ -137,11 +142,11 @@ export default class New extends PureComponent {
             </div>
 
             <div className="input-field col s6">
-              {/* <Link to='/'> */}
+
                 <button className="btn waves-effect waves-light" type='submit' name='action'>
                   Submit <i className="material-icons right">send</i>
                 </button>
-              {/* </Link> */}
+
             </div>
           </div>
 
